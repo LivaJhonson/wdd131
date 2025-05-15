@@ -1,0 +1,136 @@
+:root {
+    /* Define your color scheme here as CSS variables */
+    --primary-color: #f68308; /* Example blue */
+    --secondary-color: #2ecc71; /* Example green */
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --header-footer-bg: #2c3e50; /* Dark blue/grey */
+    --header-footer-text: #ecf0f1; /* Light grey */
+}
+
+body {
+    font-family: "Sansita", sans-serif;
+}
+
+header h1 {
+    background-color: #ddd;
+    padding: 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    font-size: 2rem;
+    text-align: center;
+}
+
+nav {
+    background-color: var(--header-footer-bg);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+     text-decoration: overline;
+    border: 1px;
+}
+
+.active {
+    color: yellow;
+}
+
+@media (min-width: 640px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        flex: 1 0 auto;
+    }
+}
+
+main {
+    max-width: 960px; /* Limited width */
+    margin: 20px auto; /* Centered horizontally */
+    padding: 20px;
+    display: grid; /* CSS Grid for main column cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center content within cards if desired */
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    background-color: var(--header-footer-bg);
+    padding: 12px 24px;
+    border-radius: 5px;
+}
+
+.card img {
+    max-width: 100%; /* Ensure images don't overflow */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-me-text {
+    flex-grow: 1; /* Allows text to take available space */
+    text-align: justify; /* Justify text for better readability */
+}
+
+/* Media query for larger screens to place image on the right */
+@media (min-width: 600px) {
+    .about-me-content {
+        flex-direction: row; /* Row direction for larger screens */
+        justify-content: space-between; /* Space out text and image */
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .about-me-content img {
+        order: 1; /* Place image as the first item visually (moves it to the right) */
+        flex-shrink: 0; /* Prevent image from shrinking */
+        width: 150px; /* Fixed width for image on larger screens */
+        margin-left: 20px; /* Add margin to the left of the image */
+    }
+
+    .about-me-text {
+        order: 0; /* Place text as the second item visually (moves it to the left) */
+        text-align:left;
+    }
+}
+
+
+footer {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
