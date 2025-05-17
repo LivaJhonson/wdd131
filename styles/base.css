@@ -1,23 +1,29 @@
 :root {
-    /* Define your color scheme here as CSS variables */
-    --primary-color: #f68308; /* Example blue */
-    --secondary-color: #2ecc71; /* Example green */
+    --primary-color: #f68308; 
+    --secondary-color: #2ecc71; 
     --text-color: #333;
     --background-color: #f4f4f4;
-    --header-footer-bg: #2c3e50; /* Dark blue/grey */
-    --header-footer-text: #ecf0f1; /* Light grey */
+    --header-footer-bg: #2c3e50; 
+    --header-footer-text: #ecf0f1;
 }
 
 body {
-    font-family: "Sansita", sans-serif;
+    font-family: "Sansita", sans-serif; 
+    background-color: var(--background-color); 
+    color: var(--text-color); 
+    margin: 0; 
+}
+
+header {
+    background-color: var(--header-footer-bg); 
+    color: var(--header-footer-text);
+    padding: 1rem;
+    text-align: center;
 }
 
 header h1 {
-    background-color: #ddd;
-    padding: 1rem;
-    border: 1px solid rgb(0 0 0 / 10%);
     font-size: 2rem;
-    text-align: center;
+    margin: 0;
 }
 
 nav {
@@ -28,41 +34,43 @@ nav {
 
 nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    flex: 1 0 auto; 
 }
 
 nav a {
     display: block;
-    color: #fff;
+    color: var(--header-footer-text);
     text-align: center;
     padding: 1rem;
     text-decoration: none;
+    font-weight: 700; 
 }
 
 nav a:hover {
-     text-decoration: overline;
-    border: 1px;
+    text-decoration: underline; 
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .active {
-    color: yellow;
+    color: yellow; 
+    text-decoration: underline;
 }
 
-@media (min-width: 640px) {
-    nav ul {
-        display: flex;
-    }
-
-    nav ul li {
-        flex: 1 0 auto;
-    }
-}
-
+/* --- MAIN CONTENT LAYOUT --- */
 main {
-    max-width: 960px; /* Limited width */
-    margin: 20px auto; /* Centered horizontally */
+    max-width: 960px; 
+    margin: 20px auto;
     padding: 20px;
-    display: grid; /* CSS Grid for main column cards */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    display: grid; 
+    grid-template-columns: 1.5fr 1fr; 
+    grid-template-rows: auto auto; 
     gap: 20px;
 }
 
@@ -71,66 +79,207 @@ main {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center content within cards if desired */
 }
 
 .card h2 {
-    color: var(--primary-color);
+    color: var(--primary-color); 
     margin-top: 0;
-    background-color: var(--header-footer-bg);
+    margin-bottom: 20px; 
+    background-color: var(--header-footer-bg); 
+    color: var(--header-footer-text);
     padding: 12px 24px;
     border-radius: 5px;
+    text-align: center; 
 }
 
 .card img {
-    max-width: 100%; /* Ensure images don't overflow */
-    height: auto;
+    max-width: 100%;
+    height: auto; 
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
+/* Specific placement for About Me card */
+.about-me {
+    grid-column: 1; 
+    grid-row: 1; 
+}
+
 .about-me-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
-.about-me-text {
-    flex-grow: 1; /* Allows text to take available space */
-    text-align: justify; /* Justify text for better readability */
+.about-me-content .about-me-text-wrapper > p { 
+    text-align: justify;
+    margin-bottom: 10px; 
 }
 
-/* Media query for larger screens to place image on the right */
+.about-me-content .about-me-text-wrapper > p:last-child {
+    margin-bottom: 0; 
+}
+
+.about-me-content img {
+    flex-shrink: 0; 
+    width: 150px; 
+    height: auto;
+    margin-top: 10px; 
+}
+
 @media (min-width: 600px) {
     .about-me-content {
-        flex-direction: row; /* Row direction for larger screens */
-        justify-content: space-between; /* Space out text and image */
-        align-items: flex-start; /* Align items to the top */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .about-me-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        order: 1;
     }
 
     .about-me-content img {
-        order: 1; /* Place image as the first item visually (moves it to the right) */
-        flex-shrink: 0; /* Prevent image from shrinking */
-        width: 150px; /* Fixed width for image on larger screens */
-        margin-left: 20px; /* Add margin to the left of the image */
+        order: 2;
+        margin-left: 20px;
     }
 
-    .about-me-text {
-        order: 0; /* Place text as the second item visually (moves it to the left) */
-        text-align:left;
+    .about-me-text-wrapper p {
+        margin-bottom: 10px;
+    }
+    .about-me-text-wrapper p:last-child {
+        margin-bottom: 0;
     }
 }
 
+.toamasina {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center; 
+}
 
+.toamasina p {
+    text-align: justify; 
+}
+
+.toamasina h2 {
+    background-color: transparent; 
+    color: var(--primary-color); 
+    text-decoration: underline; 
+    padding: 0; 
+    border-radius: 0; 
+    margin-bottom: 20px; 
+}
+
+.web-dev {
+    grid-column: 2; 
+    grid-row: 1 / span 2; 
+    align-self: stretch; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.web-dev ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 10px; 
+}
+
+.web-dev a {
+    text-decoration: none;
+    color: #2e455b;
+}
+
+.web-dev a:hover {
+    color: #4e7092d3;
+    text-decoration: underline;
+}
+
+/* --- FOOTER --- */
 footer {
     background-color: var(--header-footer-bg);
     color: var(--header-footer-text);
     text-align: center;
     padding: 1rem 0;
-    margin-top: 20px;
+    margin-top: 20px; 
 }
 
 footer p {
     margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 15px;
+    }
+
+    .about-me,
+    .toamasina,
+    .web-dev {
+        grid-column: 1;
+        grid-row: auto; 
+    }
+
+    .about-me-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-text-wrapper {
+        order: initial;
+        width: 100%; 
+    }
+
+    .about-me-content img {
+        margin: 0;
+        width: 150px; 
+        order: initial; 
+    }
+
+    .about-me-content .about-me-text-wrapper > p {
+        order: initial; 
+        text-align: justify; 
+        margin-bottom: 10px;
+    }
+    .about-me-content .about-me-text-wrapper > p:last-child {
+        margin-bottom: 0;
+    }
+
+    .web-dev {
+        align-self: auto;
+        height: auto;
+    }
+
+    .web-dev ul {
+        justify-content: flex-start;
+        gap: 5px; 
+    }
+
+    .toamasina h2 {
+        background-color: var(--header-footer-bg);
+        color: var(--header-footer-text); 
+        text-decoration: none; 
+        padding: 12px 24px; 
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 639px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav li {
+        width: 100%; 
+    }
 }
