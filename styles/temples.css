@@ -1,0 +1,109 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif; /* Choose your own typography scheme */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333; /* Choose your own color scheme */
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333; /* Example color */
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* For positioning the nav */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Hamburger Menu Button */
+#menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block; /* Show on mobile */
+    padding: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    display: none; /* Hidden by default on mobile, toggled by JS */
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    width: 100%;
+    background-color: #444; /* Background for dropdown menu */
+    z-index: 1000;
+}
+
+nav.open {
+    display: block; /* Show when open */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #555; /* Separator for menu items */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Hover effect */
+}
+
+/* Main Content Styling */
+main {
+    padding: 1rem;
+    /* Limit main width as per instructions */
+    max-width: 800px; /* Example value */
+    margin: 0 auto; /* Center the main content */
+}
+
+/* Figure (Image + Caption) Styling */
+figure {
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    background-color: white;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center image within figure */
+}
+
+figcaption {
+    padding: 0.5rem 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}

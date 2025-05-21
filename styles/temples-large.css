@@ -1,0 +1,60 @@
+/* Styles for larger screens */
+@media screen and (min-width: 768px) { /* Adjust this breakpoint as needed */
+
+    /* Hide hamburger menu button on larger screens */
+    #menu-button {
+        display: none;
+    }
+
+    /* Navigation on larger screens */
+    nav {
+        display: block; /* Always show nav on large screens */
+        position: static; /* Remove absolute positioning */
+        width: auto; /* Reset width */
+        background-color: transparent; /* Make background transparent again */
+        box-shadow: none;
+    }
+
+    nav ul {
+        display: flex; /* Use flexbox for horizontal navigation */
+        justify-content: flex-end; /* Align nav items to the right */
+        gap: 1.5rem; /* Space between nav items */
+    }
+
+    nav ul li a {
+        border-bottom: none; /* Remove bottom border */
+        padding: 0.5rem 1rem; /* Adjust padding for horizontal links */
+        border-radius: 5px; /* Slight roundness for buttons */
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Lighter hover for transparent background */
+    }
+
+    header {
+        justify-content: space-between; /* Space out title and nav */
+        padding: 1rem 2rem; /* Add more horizontal padding */
+    }
+
+    /* Main content layout using CSS Grid for 3x3 arrangement */
+    main {
+        max-width: 1200px; /* Max width for the grid container */
+        margin: 2rem auto; /* Center the grid with more vertical margin */
+        padding: 1.5rem; /* Padding around the grid */
+        display: grid;
+        /* Define a 3-column grid, each column taking equal space */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem; /* Space between grid items */
+    }
+
+    /* Ensure the heading spans all columns in the grid */
+    main h2 {
+        grid-column: 1 / -1; /* Spans from the first column line to the last */
+        margin-bottom: 2rem; /* More space below the heading */
+    }
+
+    /* Adjust figure specific styles for large screens if necessary */
+    figure {
+        margin: 0; /* Remove default margin as grid gap handles spacing */
+    }
+}
