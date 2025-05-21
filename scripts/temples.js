@@ -5,10 +5,19 @@ if (currentYearElement) {
 }
 
 // Get the last modified date for the footer
-const lastModifiedElement = document.querySelector('#lastmodified');
-if (lastModifiedElement) {
-    lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Dynamically populate the current year in the footer
+    const currentYearSpan = document.getElementById('currentyear');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Dynamically populate the last modified date in the footer
+    const lastModifiedP = document.getElementById('lastModified');
+    if (lastModifiedP) {
+        lastModifiedP.textContent = `Last Modified: ${document.lastModified}`;
+    }
+});
 
 // Hamburger menu functionality
 const hamButton = document.querySelector('#menu-button');
