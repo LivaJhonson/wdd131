@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana: The Gold Coast Land - Explore & Discover</title>
+    <meta name="description" content="Explore Ghana, a vibrant West African nation known for its rich history, diverse culture, and welcoming people. Discover key facts and weather.">
+    <meta name="author" content="Nirintsoa Liva Jhonson Rabariharinjaka">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content"> <h1 id="place-title">Ghana</h1>
+            <p class="tagline">The Land of Gold and Hospitality</p>
+        </div>
+    </header>
+
+    <main class="container"> <section id="hero-images" class="hero-section">
+            <picture>
+                <source srcset="images/ghana-large.webp" media="(min-width: 800px)">
+                <img src="images/ghana-small.webp" alt="Beautiful landscape of Ghana" width="1200" height="800" loading="lazy">
+            </picture>
+            </section>
+
+        <section id="content-layout" class="grid-layout">
+            <div id="data-section" class="card data-card">
+                <h2>Key Information</h2>
+                <dl class="data-list">
+                    <div class="data-item">
+                        <dt>Area:</dt>
+                        <dd id="data-area">238,535 km²</dd>
+                    </div>
+                    <div class="data-item">
+                        <dt>Population:</dt>
+                        <dd id="data-population">~34 million (2023 est.)</dd>
+                    </div>
+                    <div class="data-item">
+                        <dt>Capital:</dt>
+                        <dd id="data-capital">Accra</dd>
+                    </div>
+                    <div class="data-item">
+                        <dt>Languages:</dt>
+                        <dd id="data-languages">English (official), Akan, Ewe, Ga, Dagomba, etc.</dd>
+                    </div>
+                    <div class="data-item">
+                        <dt>Currency:</dt>
+                        <dd id="data-currency">Ghanaian Cedi (GHS)</dd>
+                    </div>
+                    <div class="data-item">
+                        <dt>Time Zone:</dt>
+                        <dd id="data-timezone">GMT</dd>
+                    </div>
+                    <div class="data-item">
+                        <dt>Calling Code:</dt>
+                        <dd id="data-callingcode">+233</dd>
+                    </div>
+                    <div class="data-item">
+                        <dt>Internet TLD:</dt>
+                        <dd id="data-tld">.gh</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div id="weather-section" class="card weather-card">
+                <h2>Current Weather</h2>
+                <div class="weather-details">
+                    <img id="weather-icon" src="images/temperature-icon.svg" alt="Weather icon" width="80" height="80">
+                    <p class="weather-temp">
+                        <span id="temp">--</span>°C / <span id="temp-imperial">--</span>°F
+                    </p>
+                    <p class="weather-conditions">Conditions: <span id="conditions">--</span></p>
+                    <p class="weather-wind">Wind Speed: <span id="wind-speed">--</span> km/h / <span id="wind-speed-imperial">--</span> mph</p>
+                    <p class="weather-chill">Wind Chill: <span id="wind-chill">--</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content"> <p>&copy;<span id="currentyear"></span> Nirintsoa Liva Jhonson Rabariharinjaka &bull; Ghana &bull; Last Modified: <span id="lastmodified"></span></p>
+            <p class="disclaimer">Data values are illustrative. For real-time information, consult official sources.</p>
+        </div>
+    </footer>
+</body>
+</html>
