@@ -4,20 +4,17 @@
 :root {
     /* Color Palette - Inspired by Ghana flag and modern design */
     /* Adjusted for WCAG AA contrast compliance */
-    --color-primary: #006B3F; /* Ghana Green */
-    --color-secondary: #FCD116; /* Ghana Yellow - Good for accents on dark */
-    --color-accent: #CE1126; /* Ghana Red */
-    --color-dark: #2c3e50; /* Dark Charcoal for text/backgrounds */
-    --color-light: #ecf0f1; /* Light Grey for backgrounds */
-    --color-white: #ffffff; /* Pure White */
-    
+    --color-primary: #006B3F;
+    --color-secondary: #FCD116; 
+    --color-accent: #CE1126;
+    --color-dark: #2c3e50; 
+    --color-light: #ecf0f1; 
+    --color-white: #ffffff; 
     /* Text Colors - Adjusted for WCAG AA contrast */
-    --color-text-on-dark-bg: #fdfdfd; /* Off-white for text on dark backgrounds (was --color-text-light) */
-    --color-text-on-light-bg: #34495e; /* Darker charcoal for main text (was --color-text-dark) */
-    --color-text-on-primary: #ffffff; /* White text on primary green */
-    --color-text-on-secondary: #000000; /* Black text on secondary yellow for better contrast */
-    --color-text-on-accent: #ffffff; /* White text on red */
-
+    --color-text-on-dark-bg: #fdfdfd; 
+    --color-text-on-primary: #ffffff; 
+    --color-text-on-secondary: #000000; 
+    --color-text-on-accent: #ffffff;
 
     /* Typography */
     --font-heading: 'Montserrat', sans-serif;
@@ -89,8 +86,8 @@ p { margin-bottom: var(--spacing-sm); }
 
 /* Header Styling */
 .main-header {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-dark)); /* Green to Dark gradient */
-    color: var(--color-text-on-dark-bg); /* Text on dark background */
+    background: linear-gradient(135deg, var(--color-primary), var(--color-dark)); 
+    color: var(--color-text-on-dark-bg); 
     padding: var(--spacing-xl) 0;
     box-shadow: var(--shadow-medium);
     margin-bottom: var(--spacing-lg);
@@ -136,12 +133,12 @@ p { margin-bottom: var(--spacing-sm); }
     display: grid;
     gap: var(--spacing-lg);
     padding-bottom: var(--spacing-lg);
-    grid-template-columns: 1fr; /* Default: single column for mobile */
+    grid-template-columns: 1fr; 
 }
 
 /* Data Card Styling */
 .data-card h2 {
-    color: var(--color-primary); /* Green heading on white card */
+    color: var(--color-primary); 
     border-bottom: 3px solid var(--color-secondary);
     padding-bottom: var(--spacing-xs);
     margin-bottom: var(--spacing-md);
@@ -161,7 +158,7 @@ p { margin-bottom: var(--spacing-sm); }
     justify-content: space-between;
     align-items: baseline;
     padding-bottom: var(--spacing-xs);
-    border-bottom: 1px dashed var(--color-light); /* Subtle separator */
+    border-bottom: 1px dashed var(--color-light);
 }
 
 .data-item:last-child {
@@ -170,7 +167,7 @@ p { margin-bottom: var(--spacing-sm); }
 
 .data-item dt {
     font-weight: 600;
-    color: var(--color-text-on-light-bg); /* Dark text on light background */
+    color: var(--color-text-on-light-bg); 
     flex-basis: 40%;
     text-align: left;
 }
@@ -178,15 +175,15 @@ p { margin-bottom: var(--spacing-sm); }
 .data-item dd {
     margin-left: var(--spacing-sm);
     text-align: right;
-    color: var(--color-text-on-light-bg); /* Dark text on light background */
+    color: var(--color-text-on-light-bg);
     flex-basis: 60%;
 }
 
 /* Weather Card Styling */
 .weather-card {
     text-align: center;
-    background-color: var(--color-dark); /* Dark background for weather */
-    color: var(--color-text-on-dark-bg); /* Text on dark background */
+    background-color: var(--color-dark); 
+    color: var(--color-text-on-dark-bg); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,8 +191,8 @@ p { margin-bottom: var(--spacing-sm); }
 }
 
 .weather-card h2 {
-    color: var(--color-secondary); /* Yellow heading on dark background - good contrast */
-    border-bottom: 3px solid var(--color-accent); /* Red border on dark background */
+    color: var(--color-secondary);
+    border-bottom: 3px solid var(--color-accent); 
     padding-bottom: var(--spacing-xs);
     margin-bottom: var(--spacing-md);
     width: fit-content;
@@ -351,31 +348,3 @@ p { margin-bottom: var(--spacing-sm); }
         height: 600px;
     }
 }
-
-/* IMPORTANT NOTES FOR YOUR PROJECT:
-
-    1.  IMAGE OPTIMIZATION:
-        - The 'ghana-large.webp' image needs to be optimized externally to be <= 125 KB
-          as reported by your tools. Use online compressors (like TinyPNG, Squoosh.app)
-          for this. This code cannot do that for you.
-
-    2.  FAVICON:
-        - Ensure you have a 'favicon.ico' file (generated correctly from a PNG using an
-          online favicon generator) placed in your 'wdd131/images/' folder.
-        - After deploying to GitHub Pages, always clear your browser cache (Ctrl+Shift+R
-          or Cmd+Shift+R, or Incognito Mode) to see the favicon update.
-
-    3.  CSS FILE PATH (`w3styles/styles.css` error):
-        - Your HTML links to 'styles/styles.css', which is standard. The report's
-          mention of 'w3styles/styles.css' is unusual if your local setup is correct.
-          Verify that your 'styles' folder is correctly named 'styles' (plural) both
-          locally and on GitHub. If it is, this report feedback might be due to a
-          caching issue on the checker's side or a specific requirement of the tool.
-          The current code follows the standard 'styles/' folder structure.
-
-    4.  WEATHER ICON EMOJI:
-        - The chosen emoji (☀️ sun) is a simple example. You can choose a different
-          Unicode character or emoji if you prefer. Ensure it represents "sunny weather
-          with high temperature". You can find more at https://www.unicode.org/emoji/charts/full-emoji-list.html
-          or https://www.compart.com/en/unicode/category/So
-*/
