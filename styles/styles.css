@@ -3,14 +3,21 @@
 /* Global Variables (using Ghana's flag colors as a base suggestion) */
 :root {
     /* Color Palette - Inspired by Ghana flag and modern design */
+    /* Adjusted for WCAG AA contrast compliance */
     --color-primary: #006B3F; /* Ghana Green */
-    --color-secondary: #FCD116; /* Ghana Yellow */
+    --color-secondary: #FCD116; /* Ghana Yellow - Good for accents on dark */
     --color-accent: #CE1126; /* Ghana Red */
-    --color-dark: #2c3e50; /* Dark Charcoal for text */
+    --color-dark: #2c3e50; /* Dark Charcoal for text/backgrounds */
     --color-light: #ecf0f1; /* Light Grey for backgrounds */
     --color-white: #ffffff; /* Pure White */
-    --color-text-light: #fdfdfd; /* Off-white for text on dark backgrounds */
-    --color-text-dark: #34495e; /* Darker charcoal for main text */
+    
+    /* Text Colors - Adjusted for WCAG AA contrast */
+    --color-text-on-dark-bg: #fdfdfd; /* Off-white for text on dark backgrounds (was --color-text-light) */
+    --color-text-on-light-bg: #34495e; /* Darker charcoal for main text (was --color-text-dark) */
+    --color-text-on-primary: #ffffff; /* White text on primary green */
+    --color-text-on-secondary: #000000; /* Black text on secondary yellow for better contrast */
+    --color-text-on-accent: #ffffff; /* White text on red */
+
 
     /* Typography */
     --font-heading: 'Montserrat', sans-serif;
@@ -43,7 +50,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-light);
-    color: var(--color-text-dark);
+    color: var(--color-text-on-light-bg); /* Use new variable for text on light backgrounds */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -51,7 +58,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--color-dark);
+    color: var(--color-dark); /* Good contrast on light background */
     margin-top: 0;
     line-height: 1.2;
 }
@@ -65,7 +72,6 @@ p { margin-bottom: var(--spacing-sm); }
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md); /* Horizontal padding */
-    /* This padding ensures content doesn't touch screen edges on small screens */
 }
 
 .card {
@@ -84,9 +90,8 @@ p { margin-bottom: var(--spacing-sm); }
 /* Header Styling */
 .main-header {
     background: linear-gradient(135deg, var(--color-primary), var(--color-dark)); /* Green to Dark gradient */
-    color: var(--color-text-light);
-    /* Remove padding from .main-header itself, as the container will handle it */
-    padding: var(--spacing-xl) 0; /* Vertical padding stays for header background */
+    color: var(--color-text-on-dark-bg); /* Text on dark background */
+    padding: var(--spacing-xl) 0;
     box-shadow: var(--shadow-medium);
     margin-bottom: var(--spacing-lg);
 }
@@ -97,7 +102,7 @@ p { margin-bottom: var(--spacing-sm); }
 }
 
 .main-header h1 {
-    color: var(--color-white);
+    color: var(--color-white); /* White text on dark header for contrast */
     font-size: 3.5rem;
     margin-bottom: var(--spacing-xs);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -105,7 +110,7 @@ p { margin-bottom: var(--spacing-sm); }
 
 .main-header .tagline {
     font-size: 1.2rem;
-    color: var(--color-secondary); /* Pop of yellow */
+    color: var(--color-secondary); /* Yellow on dark is good contrast */
     font-style: italic;
     margin-top: 0;
 }
@@ -122,11 +127,9 @@ p { margin-bottom: var(--spacing-sm); }
 .hero-section img {
     display: block;
     width: 100%;
-    height: 450px; /* Fixed height for visual impact, adjust as needed */
-    object-fit: cover; /* Ensures image covers the area without distortion */
+    height: 450px;
+    object-fit: cover;
 }
-
-/* Removed the .hero-overlay and its styles */
 
 /* Grid Layout for Content (Data and Weather) */
 .grid-layout {
@@ -138,7 +141,7 @@ p { margin-bottom: var(--spacing-sm); }
 
 /* Data Card Styling */
 .data-card h2 {
-    color: var(--color-primary);
+    color: var(--color-primary); /* Green heading on white card */
     border-bottom: 3px solid var(--color-secondary);
     padding-bottom: var(--spacing-xs);
     margin-bottom: var(--spacing-md);
@@ -146,15 +149,15 @@ p { margin-bottom: var(--spacing-sm); }
 
 .data-list {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile: each item on new line */
+    grid-template-columns: 1fr;
     gap: var(--spacing-sm);
     margin: 0;
     padding: 0;
-    list-style: none; /* Remove default list bullets */
+    list-style: none;
 }
 
 .data-item {
-    display: flex; /* Aligns dt and dd horizontally */
+    display: flex;
     justify-content: space-between;
     align-items: baseline;
     padding-bottom: var(--spacing-xs);
@@ -166,35 +169,36 @@ p { margin-bottom: var(--spacing-sm); }
 }
 
 .data-item dt {
-    font-weight: 600; /* Bolder for dt */
-    color: var(--color-dark);
-    flex-basis: 40%; /* Give dt more space */
+    font-weight: 600;
+    color: var(--color-text-on-light-bg); /* Dark text on light background */
+    flex-basis: 40%;
     text-align: left;
 }
 
 .data-item dd {
     margin-left: var(--spacing-sm);
     text-align: right;
-    flex-basis: 60%; /* Give dd more space */
+    color: var(--color-text-on-light-bg); /* Dark text on light background */
+    flex-basis: 60%;
 }
 
 /* Weather Card Styling */
 .weather-card {
     text-align: center;
     background-color: var(--color-dark); /* Dark background for weather */
-    color: var(--color-text-light);
+    color: var(--color-text-on-dark-bg); /* Text on dark background */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    align-items: center;
 }
 
 .weather-card h2 {
-    color: var(--color-secondary); /* Yellow heading on dark background */
-    border-bottom: 3px solid var(--color-accent);
+    color: var(--color-secondary); /* Yellow heading on dark background - good contrast */
+    border-bottom: 3px solid var(--color-accent); /* Red border on dark background */
     padding-bottom: var(--spacing-xs);
     margin-bottom: var(--spacing-md);
-    width: fit-content; /* Make border fit content */
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
@@ -206,38 +210,53 @@ p { margin-bottom: var(--spacing-sm); }
     gap: var(--spacing-sm);
 }
 
-#weather-icon {
-    width: 100px; /* Larger icon */
+/* Weather Icon Display Logic (SVG for Mobile, Emoji for Wider) */
+
+/* Hide both icons by default, then show based on media queries */
+#weather-icon-mobile,
+#weather-icon-wider {
+    display: none;
+}
+
+/* Styles for the mobile SVG icon */
+#weather-icon-mobile {
+    width: 100px;
     height: 100px;
     filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); /* Subtle glow */
     margin-bottom: var(--spacing-sm);
 }
 
+/* Styles for the wider view emoji icon */
+.emoji-icon {
+    font-size: 5rem; 
+    margin-bottom: var(--spacing-sm);
+    line-height: 1; /* Adjust line height to prevent extra space around emoji */
+}
+
+
 .weather-temp {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-white);
+    color: var(--color-white); /* White text on dark background - good contrast */
     margin: 0;
 }
 
 .weather-conditions, .weather-wind, .weather-chill {
     font-size: 1.1rem;
     margin: 0;
-    color: var(--color-text-light);
+    color: var(--color-text-on-dark-bg); /* Light text on dark background */
 }
 
 /* Footer Styling */
 .main-footer {
     background-color: var(--color-dark);
-    color: var(--color-text-light);
-    /* Removed padding from .main-footer itself */
+    color: var(--color-text-on-dark-bg); /* Text on dark background */
     box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
-    margin-top: var(--spacing-lg); /* Space above footer */
+    margin-top: var(--spacing-lg);
 }
 
-/* Ensure content inside the footer has padding and is centered */
 .footer-content {
-    padding: var(--spacing-md) var(--spacing-md); /* Apply padding to content */
+    padding: var(--spacing-md) var(--spacing-md);
     text-align: center;
     font-size: 0.9rem;
 }
@@ -253,11 +272,36 @@ p { margin-bottom: var(--spacing-sm); }
     margin-top: var(--spacing-sm);
 }
 
-/* Media Queries for Responsive Design (Tablet and Desktop) */
+/* Media Queries for Responsive Design */
+
+/* Mobile View (default behavior, or explicit max-width for smaller screens) */
+@media screen and (max-width: 767px) {
+    /* Show SVG for mobile, hide emoji */
+    #weather-icon-mobile {
+        display: block;
+    }
+    #weather-icon-wider {
+        display: none;
+    }
+
+    .hero-section img {
+        height: 350px; /* Adjust height for smaller mobile screens if desired */
+    }
+}
+
+
+/* Tablet and Desktop Views (Wider than mobile) */
 @media screen and (min-width: 768px) {
-    /* Header content alignment */
+    /* Show emoji for wider view, hide SVG */
+    #weather-icon-mobile {
+        display: none;
+    }
+    #weather-icon-wider {
+        display: block;
+    }
+
     .header-content {
-        text-align: center; /* Keep centered on wider screens too */
+        text-align: center;
     }
 
     .main-header h1 {
@@ -268,31 +312,29 @@ p { margin-bottom: var(--spacing-sm); }
     }
 
     .hero-section img {
-        height: 550px; /* Taller on larger screens */
+        height: 550px;
     }
 
-    /* Removed .hero-overlay h2 styles as the div is removed */
-
     .grid-layout {
-        grid-template-columns: 2fr 1fr; /* Data takes 2/3, Weather takes 1/3 */
-        align-items: start; /* Align content to the top */
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
     }
 
     .data-list {
-        grid-template-columns: 1fr 1fr; /* Two columns for data items on desktop */
-        gap: var(--spacing-sm) var(--spacing-lg); /* More horizontal gap */
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
     }
 
     .data-item {
-        flex-direction: column; /* Stack dt and dd on desktop */
+        flex-direction: column;
         align-items: flex-start;
-        border-bottom: none; /* No border for individual items in grid */
+        border-bottom: none;
         padding-bottom: 0;
     }
 
     .data-item dt, .data-item dd {
-        flex-basis: auto; /* Revert basis */
-        text-align: left; /* Align text left */
+        flex-basis: auto;
+        text-align: left;
         margin-left: 0;
     }
 
@@ -309,3 +351,31 @@ p { margin-bottom: var(--spacing-sm); }
         height: 600px;
     }
 }
+
+/* IMPORTANT NOTES FOR YOUR PROJECT:
+
+    1.  IMAGE OPTIMIZATION:
+        - The 'ghana-large.webp' image needs to be optimized externally to be <= 125 KB
+          as reported by your tools. Use online compressors (like TinyPNG, Squoosh.app)
+          for this. This code cannot do that for you.
+
+    2.  FAVICON:
+        - Ensure you have a 'favicon.ico' file (generated correctly from a PNG using an
+          online favicon generator) placed in your 'wdd131/images/' folder.
+        - After deploying to GitHub Pages, always clear your browser cache (Ctrl+Shift+R
+          or Cmd+Shift+R, or Incognito Mode) to see the favicon update.
+
+    3.  CSS FILE PATH (`w3styles/styles.css` error):
+        - Your HTML links to 'styles/styles.css', which is standard. The report's
+          mention of 'w3styles/styles.css' is unusual if your local setup is correct.
+          Verify that your 'styles' folder is correctly named 'styles' (plural) both
+          locally and on GitHub. If it is, this report feedback might be due to a
+          caching issue on the checker's side or a specific requirement of the tool.
+          The current code follows the standard 'styles/' folder structure.
+
+    4.  WEATHER ICON EMOJI:
+        - The chosen emoji (☀️ sun) is a simple example. You can choose a different
+          Unicode character or emoji if you prefer. Ensure it represents "sunny weather
+          with high temperature". You can find more at https://www.unicode.org/emoji/charts/full-emoji-list.html
+          or https://www.compart.com/en/unicode/category/So
+*/

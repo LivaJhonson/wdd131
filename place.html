@@ -17,17 +17,19 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="container header-content"> <h1 id="place-title">Ghana</h1>
+        <div class="container header-content"> 
+            <h1 id="place-title">Ghana</h1>
             <p class="tagline">The Land of Gold and Hospitality</p>
         </div>
     </header>
 
-    <main class="container"> <section id="hero-images" class="hero-section">
+    <main class="container"> 
+        <section id="hero-images" class="hero-section">
             <picture>
                 <source srcset="images/ghana-large.webp" media="(min-width: 800px)">
                 <img src="images/ghana-small.webp" alt="Beautiful landscape of Ghana" width="1200" height="800" loading="lazy">
             </picture>
-            </section>
+        </section>
 
         <section id="content-layout" class="grid-layout">
             <div id="data-section" class="card data-card">
@@ -71,7 +73,9 @@
             <div id="weather-section" class="card weather-card">
                 <h2>Current Weather</h2>
                 <div class="weather-details">
-                    <img id="weather-icon" src="w3images/temperature-icon.svg" alt="Weather icon" width="80" height="80">
+                    <img id="weather-icon-mobile" src="images/temperature-icon.svg" alt="Weather icon mobile" width="80" height="80">
+                    <span id="weather-icon-wider" class="emoji-icon" role="img" aria-label="Sun behind small cloud emoji">🌤</span>
+                    
                     <p class="weather-temp">
                         <span id="temp">--</span>°C / <span id="temp-imperial">--</span>°F
                     </p>
@@ -84,7 +88,8 @@
     </main>
 
     <footer class="main-footer">
-        <div class="container footer-content"> <p>&copy;<span id="currentyear"></span> Nirintsoa Liva Jhonson Rabariharinjaka &bull; Ghana &bull; Last Modified: <span id="lastmodified"></span></p>
+        <div class="container footer-content"> 
+            <p>&copy;<span id="currentyear"></span> Nirintsoa Liva Jhonson Rabariharinjaka &bull; Ghana &bull; Last Modified: <span id="lastmodified"></span></p>
             <p class="disclaimer">Data values are illustrative. For real-time information, consult official sources.</p>
         </div>
     </footer>
