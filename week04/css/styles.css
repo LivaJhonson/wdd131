@@ -1,0 +1,57 @@
+/* Center images vertically in one column */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #111;
+    color: white;
+}
+
+main {
+    max-width: 420px; /* slightly wider than images */
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Images stacked, block, centered, with margin */
+img {
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    height: auto; /* maintain aspect ratio if image loaded differently */
+    opacity: 0; /* start hidden for fade-in */
+    animation-fill-mode: forwards; /* keep final state */
+}
+
+/* Fade-in animation */
+@keyframes fadeFromBlack {
+    0% {
+        opacity: 0;
+        filter: brightness(0);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+.fade-in {
+    animation-name: fadeFromBlack;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
