@@ -1,0 +1,122 @@
+/* General Styling */
+body {
+    font-family: 'Sansita', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333; /* Example color */
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* For positioning the nav on mobile */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Hamburger Menu Button (Correct ID: #menu-button) */
+#menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block; /* Show on mobile */
+    padding: 0.5rem;
+}
+
+/* Navigation (Targets nav ul for menu items) */
+nav {
+    position: absolute; /* Positions the dropdown menu */
+    top: 100%; /* Below the header */
+    left: 0;
+    width: 100%;
+    background-color: #444; /* Background for dropdown menu */
+    z-index: 1000;
+}
+
+nav ul { /* Targets the ul element inside nav */
+    display: none; /* Hidden by default on mobile, toggled by JS */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul.open { /* THIS IS CRUCIAL: Shows the ul when the 'open' class is added by JS */
+    display: block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #555; /* Separator for mobile menu items */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Hover effect */
+}
+
+/* Main Content Styling */
+main {
+    padding: 1rem;
+    /* Limit main width on small screens before grid kicks in */
+    max-width: 800px;
+    margin: 0 auto; /* Center the main content */
+}
+
+main h2 { /* Styling for the main heading */
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem; /* Space below heading */
+}
+
+/* Figure (Image + Caption) Styling */
+figure {
+    margin: 1rem auto; /* Centers individual figures with top/bottom margin */
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+figcaption {
+    padding: 0.8rem 0.5rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}

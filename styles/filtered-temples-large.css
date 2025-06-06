@@ -1,0 +1,63 @@
+/* Styles for larger screens */
+@media screen and (min-width: 768px) { /* Adjust this breakpoint as needed */
+
+    /* Hide hamburger menu button on larger screens */
+    #menu-button {
+        display: none;
+    }
+
+    /* Navigation on larger screens */
+    nav {
+        display: block; /* Always show nav on large screens */
+        position: static; /* Remove absolute positioning from mobile dropdown */
+        width: auto; /* Reset width */
+        background-color: transparent; /* Make background transparent again */
+        box-shadow: none;
+    }
+
+    nav ul {
+        display: flex !important; /* IMPORTANT: Ensures nav is always flex on large screens, overriding JS .open class */
+        justify-content: flex-end; /* Align nav items to the right */
+        gap: 1.5rem; /* Space between nav items */
+        padding: 0; /* Remove padding from mobile */
+        margin: 0; /* Remove margin from mobile */
+    }
+
+    nav ul li a {
+        border-bottom: none; /* Remove bottom border from mobile menu items */
+        padding: 0.5rem 1rem; /* Adjust padding for horizontal links */
+        border-radius: 5px;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Lighter hover for transparent background */
+    }
+
+    header {
+        justify-content: space-between; /* Space out title and nav */
+        padding: 1rem 2rem; /* Add more horizontal padding */
+    }
+
+    /* Main content layout using CSS Grid for 3x3 arrangement */
+    main { /* This targets the <main> element directly */
+        max-width: 1200px; /* Max width for the grid container */
+        margin: 2rem auto; /* Center the grid with more vertical margin */
+        padding: 1.5rem; /* Padding around the grid */
+        display: grid; /* Turns main into a grid container */
+        /* Define a flexible 3-column grid, min width 300px per column */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* This creates 3 columns (or more/less based on screen width) */
+        gap: 1.5rem; /* Space between grid items */
+    }
+
+    /* Ensure the heading spans all columns in the grid */
+    main h2 {
+        grid-column: 1 / -1; /* Makes the h2 span across all grid columns */
+        margin-bottom: 2rem; /* More space below the heading */
+        text-align: center; /* Center the heading */
+    }
+
+    /* Adjust figure specific styles for large screens if necessary */
+    figure {
+        margin: 0; /* Remove default margin as grid gap handles spacing */
+    }
+}
