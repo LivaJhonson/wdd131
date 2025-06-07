@@ -1,0 +1,185 @@
+/* This file defines the base styles that apply to ALL screen sizes,
+   ensuring the consistent mobile-like view as requested. */
+
+/* General Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif; /* Trustworthy Guide */
+    color: #424242; /* Dark Charcoal Gray */
+    background-color: #FDFDFD; /* Airy Cream White */
+    line-height: 1.7; /* Increased line height for readability */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Header Styling (Applies universally) */
+header {
+    background: linear-gradient(135deg, #3F51B5 0%, #673AB7 100%); /* Deep Lavender Blue to Rich Violet Gradient */
+    color: #ffffff;
+    text-align: center; /* Ensures content is centered in the header */
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Deeper, more elegant shadow */
+}
+
+/* Header Content container (h1 and nav will stack vertically within this, by default block behavior) */
+.header-content {
+    display: block; /* Ensures h1 and nav always stack vertically. This is key for your request. */
+}
+
+header h1.site-title {
+    font-family: 'Montserrat', sans-serif; /* Bold Explorer */
+    font-size: 2em;
+    margin-bottom: 15px; /* Space below title */
+    letter-spacing: 0.8px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Navigation Styling (Always vertical/column) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Navigation items will always stack vertically */
+    justify-content: center;
+    gap: 12px; /* Space between nav items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 30px;
+    transition: background-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: block; /* Makes anchor tags take full width for easier tapping/clicking */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent background for nav items */
+}
+
+nav a:hover, nav a:focus {
+    background-color: #8BC34A; /* Lush Meadow Green */
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Main Content Area */
+main {
+    max-width: 100%; /* No fixed max-width for smaller screens */
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+/* Section Styling */
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #EEEEEE; /* Light Mist Gray border */
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+section h2 {
+    font-family: 'Montserrat', sans-serif; /* Bold Explorer */
+    color: #3F51B5; /* Deep Lavender Blue */
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #EEEEEE; /* Light Mist Gray border */
+    padding-bottom: 12px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+section h3 {
+    font-family: 'Montserrat', sans-serif; /* Bold Explorer */
+    color: #424242; /* Dark Charcoal Gray */
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Paragraphs and Lists */
+p {
+    margin-bottom: 18px;
+}
+
+ul, ol {
+    margin-bottom: 18px;
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+/* Link Styling within content */
+a {
+    color: #673AB7; /* Rich Violet */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #3F51B5; /* Deep Lavender Blue on hover */
+}
+
+/* Color Swatch for Schema Section */
+.color-swatch {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 12px;
+    border: 2px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Wireframe Images */
+figure {
+    margin: 30px 0;
+    text-align: center;
+}
+
+figure img {
+    border: 3px solid #EEEEEE; /* Light Mist Gray border */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.95em;
+    color: #6c757d;
+    margin-top: 12px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 2px solid #EEEEEE; /* Light Mist Gray border */
+    color: #6c757d;
+    font-size: 0.95em;
+}
+
+footer p {
+    margin: 10px 0;
+}

@@ -1,0 +1,50 @@
+/* This file contains MINIMAL overrides for screens 768px wide and up.
+   It DOES NOT change the header layout or navigation direction.
+   It only adjusts general font sizes and main content spacing for better readability on large screens. */
+
+/* Base font size adjustment for larger screens (does not affect layout) */
+body {
+    font-size: 18px; /* Slightly larger base font for desktop for better readability */
+}
+
+/* Main Content Area - Allows content to follow container's width */
+main {
+    margin: 40px auto; /* More vertical margin for desktop */
+    padding: 0 50px; /* Increased horizontal padding for more breathing room on wide screens */
+}
+
+/* Adjust section padding for larger screens */
+section {
+    padding: 40px; /* More generous padding inside sections */
+    margin-bottom: 40px; /* More space between sections */
+}
+
+/* Adjust heading sizes for larger screens */
+section h2 {
+    font-size: 2.4em; /* Larger h2 for desktop */
+}
+
+section h3 {
+    font-size: 1.5em; /* Larger h3 for desktop */
+}
+
+/* Adjust spacing for paragraphs and lists on larger screens */
+p {
+    margin-bottom: 20px;
+}
+
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 35px;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* Footer adjustments for larger screens */
+footer {
+    padding: 35px 0;
+    margin-top: 60px;
+    font-size: 1em;
+}
