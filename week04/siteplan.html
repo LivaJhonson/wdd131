@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coaching English Online - A Journey to Fluency: Website Plan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <meta name="author" content="Nirintsoa Liva Jhonson Rabariharinjaka">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="mobile.css">
+
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 768px)">
 </head>
 <body>
@@ -87,13 +87,13 @@
 
             <h3>Mobile View Wireframe (Home Page: Your Pocket Companion)</h3>
             <figure>
-                <img src="images/mobile-wireframe.png" alt="Mobile Wireframe for Coaching English Online Homepage" style="max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="mobile-wireframe.png" alt="Mobile Wireframe for Coaching English Online Homepage" style="max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                 <figcaption>A focused, gracefully scrollable layout designed for effortless navigation and swift information access on smartphones, always within reach.</figcaption>
             </figure>
 
             <h3>Desktop View Wireframe (Home Page: Your Expansive Hub)</h3>
             <figure>
-                <img src="images/desktop-wireframe.png" alt="Desktop Wireframe for Coaching English Online Homepage" style="max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="desktop-wireframe.png" alt="Desktop Wireframe for Coaching English Online Homepage" style="max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                 <figcaption>An expansive, intelligently multi-column layout offering a comprehensive overview and richer, more inviting interactive elements, perfectly tailored for larger screens.</figcaption>
             </figure>
             <p><em>(Note: Replace "mobile-wireframe.png" and "desktop-wireframe.png" with your actual, inspiring wireframe image files in the same `project` directory.)</em></p>
@@ -103,4 +103,34 @@
             <h2>CSS Plan (Step 3): Weaving the Visual Story with Grace</h2>
             <p>Our website's captivating visual appeal and seamlessly responsive behavior will be meticulously crafted through a sophisticated dual CSS approach, guaranteeing an optimal and delightful experience for every visitor, irrespective of their device:</p>
             <ul>
-                <li><strong>`mobile.css` (The Essential Foundation):</strong> This file lays
+                <li><strong>`mobile.css` (The Essential Foundation):</strong> This file lays the elegant groundwork. It contains the core styles, inviting typography, and serene color scheme, all meticulously optimized for smaller screens. It ensures a lightning-fast loading and profoundly functional experience on mobile devices. It's the minimalist beauty that champions universal accessibility first.</li>
+                <li><strong>`desktop.css` (The Refined Enhancement Layer):</strong> Loaded intelligently and conditionally for larger screens (tabl1ets and desktops), this file acts as an exquisite overlay. It introduces sophisticated layout adjustments, beautifully scaled typography, enhanced, generous spacing, and richer visual details that elevate the experience on wider viewports, all while gracefully avoiding any unnecessary burden on mobile users.</li>
+            </ul>
+            <p>This strategic separation of CSS ensures a fluid, graceful adaptation of the design across the entire digital landscape, seamlessly transforming the user's journey from a convenient pocket-sized guide to an expansive, inspiring learning environment. Every single pixel will contribute to a consistent, compelling, and truly beautiful brand presence.</p>
+        </section>
+
+        <section id="testing">
+            <h2>Testing (Step 4): Our Commitment to Flawless Navigation and Delight</h2>
+            <p>Our unwavering dedication to unparalleled quality ensures "Coaching English Online" will be a robust, universally accessible, and exceptionally high-performing resource. We commit to a rigorous, empathetic testing regimen, utilizing cutting-edge tools to validate every nuanced aspect of the user's delightful experience:</p>
+            <ul>
+                <li><strong>HTML Validation:</strong> The <a href="https://validator.w3.org/" target="_blank">W3C HTML Validator</a> will be our first, vigilant line of defense, ensuring a pristine, semantic, and impeccably error-free structural foundation for optimal browser interpretation and superior SEO.</li>
+                <li><strong>CSS Validation:</strong> The <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validator</a> will meticulously inspect both `mobile.css` and `desktop.css` to confirm precise syntax, unwavering adherence to best practices, and harmonious cross-browser consistency.</li>
+                <li><strong>Accessibility Audits:</strong>
+                    <ul>
+                        <li><a href="https://developer.chrome.com/docs/lighthouse/overview/" target="_blank">Lighthouse (Chrome DevTools)</a>: A comprehensive, insightful audit will assess performance, best practices, and crucial accessibility scores, empathetically guiding us to create a truly inclusive and welcoming environment for all learners.</li>
+                        <li><a href="https://wave.webaim.org/" target="_blank">WAVE Web Accessibility Evaluation Tool</a>: This powerful, intuitive tool will gracefully reveal any potential accessibility barriers, ensuring our content and interactive elements are universally perceivable, effortlessly operable, easily understandable, and robust for every individual, embracing diversity.</li>
+                    </ul>
+                </li>
+                <li><strong>Color Contrast Verification:</strong> The <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a> will guarantee that our carefully selected, harmonious color palette provides ample and comfortable contrast, ensuring optimal readability for all users, including those with varying visual abilities.</li>
+                <li><strong>Responsive Journey Mapping:</strong> Extensive, thoughtful manual testing across a vibrant spectrum of device sizes (utilizing browser developer tools and real devices) will confirm that the transition between `mobile.css` and `desktop.css` is utterly seamless, fluid, and visually stunning, providing a consistent, delightful experience from the smallest phone screen to the grandest desktop display.</li>
+                <li><strong>JavaScript Functionality Assurance:</strong> In-depth console checks and meticulous debugging will verify that all JavaScript-powered features – from the captivating vocabulary flashcards and dynamic quizzes to seamless content updates and invaluable progress-saving via `localStorage` – function flawlessly, enriching the learning experience without a single hitch, making every interaction a pleasure.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Coaching English Online: Your Compassionate Partner in Fluency.</p>
+        <p>This document is a creative blueprint, passionately prepared as part of the WDD 131 project requirements.</p>
+    </footer>
+</body>
+</html>
