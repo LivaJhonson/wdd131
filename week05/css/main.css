@@ -1,0 +1,214 @@
+/* css/main.css */
+
+/* General Body and Container Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e0e0; /* Lighter grey background outside the form */
+    color: #333;
+    display: flex; /* Use flexbox for centering form */
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to bottom if content is short */
+}
+
+main {
+    flex-grow: 1; /* Allows main content to take up available space */
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+    align-items: flex-start; /* Align form to the top of the main area */
+    padding: 20px; /* Padding around the form container */
+}
+
+form {
+    background-color: #ffffff; /* White background for the form container */
+    padding: 30px 40px; /* More padding as seen in wireframe */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    width: 100%;
+    max-width: 500px; /* Limit form width */
+    box-sizing: border-box;
+}
+
+/* Form Elements Styling */
+label {
+    display: block;
+    margin-bottom: 10px; /* Spacing between label and input */
+    font-weight: bold;
+    color: #555; /* Slightly darker grey for labels */
+    font-size: 0.95em; /* Adjust label font size if needed */
+}
+
+.optional {
+    font-weight: normal;
+    color: #888; /* Lighter color for optional text */
+    font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%; /* Full width within its parent */
+    padding: 12px 15px; /* More padding inside inputs */
+    margin-bottom: 25px; /* More spacing between fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f8f8f8; /* Light grey background for inputs */
+}
+
+select {
+    appearance: none; /* Remove default select arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23333"><polygon points="0,0 10,0 5,10"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+}
+
+/* Adjustments for date input to ensure icon is visible */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1; /* Ensure the calendar icon is visible */
+    cursor: pointer;
+}
+
+/* Rating Stars */
+.rating-stars {
+    display: flex; /* Arrange stars horizontally */
+    justify-content: space-around; /* Distribute stars evenly */
+    margin-bottom: 25px;
+}
+
+.rating-stars > div {
+    display: flex; /* Make each star and radio button a flex container */
+    flex-direction: column; /* Stack star above radio button */
+    align-items: center; /* Center horizontally */
+    gap: 8px; /* Space between star and radio button */
+}
+
+.rating-stars label {
+    font-size: 1.8em; /* Larger stars */
+    color: #bbb; /* Lighter grey for unchecked stars */
+    cursor: pointer;
+    font-weight: normal; /* Stars shouldn't be bold */
+    margin-bottom: 0; /* No bottom margin on star label */
+}
+
+.rating-stars input[type="radio"] {
+    /* Make radio buttons visible and styled */
+    width: 18px;
+    height: 18px;
+    -webkit-appearance: radio; /* Restore default radio button appearance */
+    -moz-appearance: radio;
+    appearance: radio;
+    margin-bottom: 0; /* Remove default input margin */
+}
+
+/* Style for checked stars - you might need JavaScript for advanced hover/fill effects */
+/* This will make the text color of the labels bold and the color of the radio button */
+.rating-stars input[type="radio"]:checked + label { /* The + selects the immediately following sibling */
+    color: gold; /* Example: fill checked stars */
+    font-weight: bold;
+}
+/* For the wireframe, it seems the stars themselves (the text) change color */
+/* Need to adjust the HTML to have the stars as the label for the radio button.
+   The previous HTML with label *above* the radio button is fine.
+   The CSS needs to select the label for the *checked* radio button. */
+.rating-stars input[type="radio"]:checked ~ label { /* This selects all following labels */
+    color: gold; /* Still affects subsequent stars */
+}
+/* To affect ONLY the selected star: */
+.rating-stars > div > input[type="radio"]:checked + label {
+    color: #FFD700; /* Gold */
+}
+
+
+/* Checkbox Group */
+.checkbox-group div {
+    margin-bottom: 10px; /* Space between checkbox items */
+    display: flex; /* Align checkbox and label horizontally */
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px; /* Standard size for checkboxes */
+    height: 20px;
+    margin-right: 10px; /* Space between checkbox and its label */
+    margin-bottom: 0; /* Remove default input margin */
+    -webkit-appearance: checkbox; /* Ensure default checkbox appearance */
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Remove bottom margin from checkbox labels */
+    font-weight: normal; /* Checkbox labels typically not bold */
+    color: #333;
+}
+
+
+/* Textarea */
+textarea {
+    min-height: 120px; /* Make textarea taller as in wireframe */
+    resize: vertical;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px 20px; /* Larger padding for button */
+    background-color: #8A2BE2; /* Violet color as in wireframe */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Slightly more rounded */
+    font-size: 1.2em; /* Larger font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px; /* Space above the button */
+}
+
+button[type="submit"]:hover {
+    background-color: #6A1EB8; /* Darker violet on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #330033; /* Dark purple/maroon color */
+    color: #e0e0e0; /* Light text color */
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.9em;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .flower-icon { /* If you add a specific class for the flower */
+    color: #f0e0f0; /* Lighter color for flower */
+    font-size: 1.1em;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    form {
+        padding: 20px 25px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+        padding: 10px 12px;
+    }
+
+    .rating-stars label {
+        font-size: 1.5em;
+    }
+}
