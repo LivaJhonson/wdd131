@@ -105,8 +105,23 @@ document.addEventListener('DOMContentLoaded', () => {
             nextQuestionBtn.style.display = 'inline-block';
             resetQuizBtn.style.display = 'inline-block';
             quizResult.textContent = ''; // Clear previous result
+
+            // Add event listeners to the newly created radio buttons
+            document.querySelectorAll('input[name="quizOption"]').forEach(radio => {
+                radio.addEventListener('change', checkAnswerAndPrepareNext); // Use 'change' event for radio buttons
+            });
         }
     }
+
+    // New function to handle checking answer and preparing for next question
+    function checkAnswerAndPrepareNext() {
+        checkAnswer(); // Check the answer immediately when an option is selected
+        // Optionally, you can add a short delay before enabling the 'Next Question' button
+        // or just rely on the user clicking the 'Next Question' button explicitly.
+        // For now, checkAnswer will mark it correct/incorrect.
+        // The setTimeout for goToNextQuestion is now triggered by clicking 'Next Question' button.
+    }
+
 
     function checkAnswer() {
         const selectedOption = document.querySelector('input[name="quizOption"]:checked');
@@ -118,6 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const userAnswer = selectedOption.value;
         const correctAnswer = quizData[currentQuizQuestionIndex].correctAnswer;
+
+        // Ensure the answer is checked only once per question
+        if (selectedOption.hasAttribute('data-checked')) {
+            return; // Already checked this question
+        }
+        selectedOption.setAttribute('data-checked', 'true'); // Mark as checked
 
         // Conditional branching
         if (userAnswer === correctAnswer) {
@@ -157,16 +178,22 @@ document.addEventListener('DOMContentLoaded', () => {
         userScore = 0;
         localStorage.removeItem('quizScore');
         localStorage.removeItem('currentQuizQuestionIndex');
-        displayQuizQuestion();
+        displayQuizQuestion(); // Display the first question to restart
+        quizResult.textContent = ''; // Clear quiz result message
+        nextQuestionBtn.style.display = 'none'; // Hide next until start
+        resetQuizBtn.style.display = 'none'; // Hide reset until start
+        startQuizBtn.style.display = 'inline-block'; // Show start button again
+        quizDisplay.innerHTML = ''; // Clear content from display
     }
 
+    // Event listeners for main quiz buttons
     if (startQuizBtn) { // Ensure elements exist on the page
         startQuizBtn.addEventListener('click', () => {
             // Check localStorage for previous progress
             const savedScore = localStorage.getItem('quizScore');
             const savedIndex = localStorage.getItem('currentQuizQuestionIndex');
 
-            if (savedScore !== null && savedIndex !== null) {
+            if (savedScore !== null && savedIndex !== null && parseInt(savedIndex) < quizData.length) { // Ensure saved index is valid
                 userScore = parseInt(savedScore);
                 currentQuizQuestionIndex = parseInt(savedIndex);
                 // Optionally, confirm with user if they want to resume
@@ -176,6 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     resetQuiz(); // User chose to restart
                 }
             } else {
+                currentQuizQuestionIndex = 0; // Start from beginning if no saved progress or invalid
+                userScore = 0;
                 displayQuizQuestion();
             }
         });
@@ -183,7 +212,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (nextQuestionBtn) {
         nextQuestionBtn.addEventListener('click', () => {
-            checkAnswer(); // Check current answer first
+            // Check the answer if it hasn't been checked by a radio button 'change' event yet
+            // (This is a fallback/redundancy in case user clicks next without selecting)
+            checkAnswer();
             // Add a small delay before going to next question to allow user to read feedback
             setTimeout(goToNextQuestion, 1500);
         });
@@ -219,7 +250,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             // Re-select the flashcard element after it's been re-rendered
             const currentCardElement = flashcardDisplay.querySelector('.flashcard');
-            currentCardElement.addEventListener('click', flipFlashcard);
+            if (currentCardElement) { // Ensure element exists before adding listener
+                currentCardElement.addEventListener('click', flipFlashcard);
+            }
 
             loadFlashcardBtn.style.display = 'none';
             revealFlashcardBtn.style.display = 'inline-block';
