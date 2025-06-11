@@ -1,0 +1,97 @@
+@media screen and (min-width: 768px) {
+    /* Header adjustments for wider screens */
+    .header-content {
+        flex-direction: row; /* Align logo and nav horizontally */
+        justify-content: space-between; /* Space them out */
+    }
+
+    .site-title {
+        font-size: 2em; /* Increase font size for desktop */
+    }
+
+    nav ul {
+        gap: 20px; /* More space between nav items */
+    }
+
+    /* Main content padding adjustment */
+    main {
+        padding: 40px 20px;
+    }
+
+    /* Hero section for desktop */
+    #hero {
+        flex-direction: row; /* Align image and text side-by-side */
+        text-align: left;
+        gap: 30px;
+        padding: 50px;
+    }
+
+    #hero img {
+        max-width: 45%; /* Image takes less width on desktop */
+        margin-bottom: 0;
+    }
+
+    #hero .hero-text-content {
+        flex: 1; /* Text content takes remaining space */
+    }
+
+    #hero h1 {
+        font-size: 3em; /* Larger heading on desktop */
+        text-align: left;
+    }
+
+    #hero p {
+        font-size: 1.2em;
+        text-align: left;
+    }
+
+    /* Card layouts (benefits, resources, testimonials) */
+    .benefit-cards, .resource-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for testimonials */
+    }
+
+    /* Specific Section Layouts (tips, motivation) */
+    #tips .tip-content, #motivation .motivation-content {
+        flex-direction: row; /* Align content side-by-side */
+        text-align: left;
+        align-items: flex-start; /* Align content to the top */
+    }
+
+    #tips .tip-content img, #motivation .motivation-content img {
+        max-width: 40%; /* Adjust image size for desktop */
+    }
+
+    #tips ul, #motivation ul {
+        width: auto; /* Allow width to be determined by content */
+        flex: 1; /* Take up available space */
+    }
+
+    /* Forms */
+    form {
+        max-width: 700px; /* Limit form width on desktop */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    form input[type="submit"],
+    form button[type="submit"] {
+        width: auto; /* Auto width for buttons */
+        padding: 15px 40px;
+    }
+
+    /* Practice Section (Quiz & Flashcards) */
+    .practice-tools {
+        flex-direction: row; /* Align quiz and flashcards side-by-side */
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .quiz-container, .flashcard-container {
+        flex: 1; /* Distribute space equally */
+        max-width: 48%; /* Adjust for spacing */
+    }
+}

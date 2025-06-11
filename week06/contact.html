@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coaching English Online - Your Path to Fluency</title>
+        <meta name="description" content="Coaching English Online is dedicated to empowering English language learners with curated resources and personalized coaching.">
+        <meta name="author" content="Nirintsoa Liva Jhonson Rabariharinjaka">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 768px)">
+    </head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="site-logo">
+                <img src="images/logo_placeholder.svg" alt="Coaching English Online Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact & Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact-form-section">
+            <h1>Get in Touch & Ask a Question!</h1>
+            <p>Have a question about learning English, need a specific coaching tip, or just want to send us a message? Use the form below!</p>
+            <form id="contactForm" method="post" action="submit-form.php"> <fieldset>
+                    <legend>Your Details</legend>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+                    <label for="phone">Phone (Optional):</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., +1-555-123-4567">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your Message / Tip Request</legend>
+                    <label for="messageType">What's your message about?</label>
+                    <select id="messageType" name="messageType" required>
+                        <option value="">-- Please choose an option --</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="coaching-tip">Request Coaching Tip</option>
+                        <option value="feedback">Website Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="topic">Specific Topic (if applicable):</label>
+                    <input type="text" id="topic" name="topic" placeholder="e.g., Grammar, Vocabulary, Pronunciation">
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Type your question or message here..."></textarea>
+                </fieldset>
+
+                <button type="submit">Send Message</button>
+                <div id="formMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px; background-color: #e6ffe6; border: 1px solid #8bc34a; color: #3f51b5;"></div>
+            </form>
+        </section>
+
+        <section id="practice-section">
+            <h1>Practice Your English!</h1>
+            <div class="practice-tools">
+                <div class="quiz-container">
+                    <h2>Vocabulary Quiz</h2>
+                    <p>Test your English vocabulary! Your progress will be saved.</p>
+                    <div id="quizDisplay">
+                        </div>
+                    <button id="startQuizBtn" class="button primary">Start Quiz</button>
+                    <button id="nextQuestionBtn" class="button secondary" style="display:none;">Next Question</button>
+                    <button id="resetQuizBtn" class="button tertiary" style="display:none;">Reset Quiz</button>
+                    <div id="quizResult" style="margin-top: 15px; font-weight: bold;"></div>
+                </div>
+
+                <div class="flashcard-container">
+                    <h2>Flashcards</h2>
+                    <p>Learn new words with interactive flashcards. Click to reveal the meaning!</p>
+                    <div id="flashcardDisplay">
+                        <div class="flashcard" style="display: none;">
+                            <div class="front">Click "Load Flashcard"</div>
+                            <div class="back"></div>
+                        </div>
+                    </div>
+                    <button id="loadFlashcardBtn" class="button primary">Load Flashcard</button>
+                    <button id="revealFlashcardBtn" class="button secondary" style="display:none;">Reveal Answer</button>
+                    <button id="nextFlashcardBtn" class="button secondary" style="display:none;">Next Flashcard</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Coaching English Online. All rights reserved.</p>
+        <p><a href="references.html">References</a></p>
+        <p>Contact us: info@coachingenglish.online</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
