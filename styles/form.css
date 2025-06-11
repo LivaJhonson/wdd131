@@ -1,204 +1,329 @@
-/* css/main.css */
+/* styles/main.css */
+
+/* Define CSS Variables for a Creative Color Scheme */
+:root {
+    /* Primary & Accent Colors */
+    --primary-color: #2B4A6F; /* Deep Teal-Blue for Header/Footer */
+    --accent-color: #FF6F61; /* Vibrant Coral/Salmon for highlights/focus */
+
+    /* Backgrounds */
+    --body-bg: #F0F4F8; /* Light, clean blue-grey for page background */
+    --form-card-bg: #FFFFFF; /* Pure white for form/card sections */
+    --input-bg: #F8F8F8; /* Very subtle grey for input fields */
+
+    /* Text Colors */
+    --main-text-color: #333333; /* Dark grey for general text */
+    --label-text-color: #555555; /* Slightly lighter dark grey for labels */
+    --optional-text-color: var(--accent-color); /* Use accent color for optional text */
+    --header-footer-text: #FFFFFF; /* White text on dark primary background */
+
+    /* Borders & Shadows */
+    --border-color: #DDDDDD; /* Light grey for input borders */
+    --focus-border-color: var(--accent-color); /* Accent color for input focus border */
+    --focus-shadow-color: rgba(255, 111, 97, 0.3); /* Soft glow matching accent color */
+    --box-shadow: rgba(0, 0, 0, 0.12); /* Slightly lighter shadow */
+
+    /* Button Colors */
+    --button-bg: #EBEBEB; /* Light grey button default */
+    --button-hover-bg: #DCDCDC; /* Slightly darker on hover */
+    --button-active-bg: #CFCFCF; /* Even darker on active */
+
+    /* Star Rating Colors */
+    --star-unchecked-color: #BBB; /* Light grey for unchecked stars */
+    --star-gold-color: #FFD700; /* Classic gold for checked/hovered stars */
+}
+
 
 /* General Body and Container Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0e0e0; /* Lighter grey background outside the form */
-    color: #333;
-    display: flex; /* Use flexbox for centering form */
+    background-color: var(--body-bg); /* Use new body background color */
+    color: var(--main-text-color); /* Use new main text color */
+    display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures footer sticks to bottom if content is short */
+    min-height: 100vh;
+}
+
+/* Page Header for the title "Product Review" */
+.page-header {
+    background-color: var(--primary-color); /* Use new primary color */
+    color: var(--header-footer-text); /* Use white text for header/footer */
+    padding: 15px 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    max-width: 960px;
+    margin: 20px auto 0 auto;
+    box-shadow: 0 4px 15px var(--box-shadow); /* Use new shadow color */
+    box-sizing: border-box;
+    z-index: 2;
+    position: relative;
+}
+
+.page-header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8em;
+    margin: 0;
 }
 
 main {
-    flex-grow: 1; /* Allows main content to take up available space */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Center the form horizontally */
-    align-items: flex-start; /* Align form to the top of the main area */
-    padding: 20px; /* Padding around the form container */
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
 }
 
 form {
-    background-color: #ffffff; /* White background for the form container */
-    padding: 30px 40px; /* More padding as seen in wireframe */
-    border-radius: 10px; /* Slightly rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    background-color: var(--form-card-bg); /* Use new form background color */
+    padding: 30px 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 15px var(--box-shadow); /* Use new shadow color */
     width: 100%;
-    max-width: 500px; /* Limit form width */
+    max-width: 960px;
     box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    top: -10px;
+    z-index: 1;
 }
+
+/* General styling for card-like sections (used in review.html) */
+.card-section {
+    background-color: var(--form-card-bg); /* Use new card background color */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--box-shadow); /* Use new shadow color */
+    width: 100%;
+    max-width: 960px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
 
 /* Form Elements Styling */
 label {
     display: block;
-    margin-bottom: 10px; /* Spacing between label and input */
+    margin-bottom: 10px;
     font-weight: bold;
-    color: #555; /* Slightly darker grey for labels */
-    font-size: 0.95em; /* Adjust label font size if needed */
+    color: var(--label-text-color); /* Use new label text color */
+    font-size: 0.95em;
 }
 
 .optional {
     font-weight: normal;
-    color: #888; /* Lighter color for optional text */
-    font-size: 0.9em;
+    color: var(--optional-text-color); /* Use accent color for optional text */
+    font-style: italic;
+    font-size: 0.85em;
 }
 
 input[type="text"],
 input[type="date"],
 select,
 textarea {
-    width: 100%; /* Full width within its parent */
-    padding: 12px 15px; /* More padding inside inputs */
-    margin-bottom: 25px; /* More spacing between fields */
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color); /* Use new border color */
     border-radius: 5px;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1em;
-    background-color: #f8f8f8; /* Light grey background for inputs */
+    background-color: var(--input-bg); /* Use new input background color */
+    color: var(--main-text-color); /* Ensure text color is readable */
+}
+
+/* Input focus states */
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--focus-border-color); /* Use accent color for focus border */
+    box-shadow: 0 0 0 3px var(--focus-shadow-color); /* Use accent color for focus shadow */
 }
 
 select {
-    appearance: none; /* Remove default select arrow */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23333"><polygon points="0,0 10,0 5,10"/></svg>'); /* Custom arrow */
+    /* Updated SVG fill color to a darker tone to be more visible on light input bg */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23444"><polygon points="0,0 10,0 5,10"/></svg>');
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 10px;
-}
-
-/* Adjustments for date input to ensure icon is visible */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    opacity: 1; /* Ensure the calendar icon is visible */
     cursor: pointer;
 }
 
-/* Rating Stars */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Overall Rating Stars */
 .rating-stars {
-    display: flex; /* Arrange stars horizontally */
-    justify-content: space-around; /* Distribute stars evenly */
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 25px;
 }
 
 .rating-stars > div {
-    display: flex; /* Make each star and radio button a flex container */
-    flex-direction: column; /* Stack star above radio button */
-    align-items: center; /* Center horizontally */
-    gap: 8px; /* Space between star and radio button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .rating-stars label {
-    font-size: 1.8em; /* Larger stars */
-    color: #bbb; /* Lighter grey for unchecked stars */
+    font-size: 1.8em;
+    color: var(--star-unchecked-color); /* Use unchecked star color */
     cursor: pointer;
-    font-weight: normal; /* Stars shouldn't be bold */
-    margin-bottom: 0; /* No bottom margin on star label */
+    font-weight: normal;
+    margin-bottom: 0;
+    transition: color 0.2s ease-in-out;
 }
 
+/* Style for the radio buttons themselves */
 .rating-stars input[type="radio"] {
-    /* Make radio buttons visible and styled */
     width: 18px;
     height: 18px;
-    -webkit-appearance: radio; /* Restore default radio button appearance */
+    margin: 0;
+    -webkit-appearance: radio;
     -moz-appearance: radio;
     appearance: radio;
-    margin-bottom: 0; /* Remove default input margin */
+    cursor: pointer;
 }
 
-/* Style for checked stars - you might need JavaScript for advanced hover/fill effects */
-/* This will make the text color of the labels bold and the color of the radio button */
-.rating-stars input[type="radio"]:checked + label { /* The + selects the immediately following sibling */
-    color: gold; /* Example: fill checked stars */
-    font-weight: bold;
+/* CSS to make the selected star label gold */
+.rating-stars input[type="radio"]:checked + label {
+    color: var(--star-gold-color); /* Use gold for selected stars */
 }
-/* For the wireframe, it seems the stars themselves (the text) change color */
-/* Need to adjust the HTML to have the stars as the label for the radio button.
-   The previous HTML with label *above* the radio button is fine.
-   The CSS needs to select the label for the *checked* radio button. */
-.rating-stars input[type="radio"]:checked ~ label { /* This selects all following labels */
-    color: gold; /* Still affects subsequent stars */
-}
-/* To affect ONLY the selected star: */
-.rating-stars > div > input[type="radio"]:checked + label {
-    color: #FFD700; /* Gold */
+/* Apply hover effect to individual stars */
+.rating-stars label:hover {
+    color: var(--star-gold-color); /* Use gold on hover */
 }
 
 
 /* Checkbox Group */
+.checkbox-group {
+    margin-bottom: 25px;
+}
+
 .checkbox-group div {
-    margin-bottom: 10px; /* Space between checkbox items */
-    display: flex; /* Align checkbox and label horizontally */
+    margin-bottom: 10px;
+    display: flex;
     align-items: center;
 }
 
 .checkbox-group input[type="checkbox"] {
-    width: 20px; /* Standard size for checkboxes */
+    width: 20px;
     height: 20px;
-    margin-right: 10px; /* Space between checkbox and its label */
-    margin-bottom: 0; /* Remove default input margin */
-    -webkit-appearance: checkbox; /* Ensure default checkbox appearance */
+    margin-right: 10px;
+    margin-bottom: 0;
+    -webkit-appearance: checkbox;
     -moz-appearance: checkbox;
     appearance: checkbox;
+    cursor: pointer;
 }
 
 .checkbox-group label {
-    margin-bottom: 0; /* Remove bottom margin from checkbox labels */
-    font-weight: normal; /* Checkbox labels typically not bold */
-    color: #333;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: var(--main-text-color); /* Use main text color */
+    cursor: pointer;
 }
 
 
 /* Textarea */
 textarea {
-    min-height: 120px; /* Make textarea taller as in wireframe */
+    min-height: 120px;
     resize: vertical;
 }
 
 /* Submit Button */
-button[type="submit"] {
+.submit-button {
     display: block;
     width: 100%;
-    padding: 15px 20px; /* Larger padding for button */
-    background-color: #8A2BE2; /* Violet color as in wireframe */
-    color: white;
-    border: none;
-    border-radius: 8px; /* Slightly more rounded */
-    font-size: 1.2em; /* Larger font size */
+    padding: 15px 20px;
+    background-color: var(--button-bg); /* Use new button background */
+    color: var(--main-text-color);
+    border: 1px solid var(--border-color); /* Use new border color */
+    border-radius: 8px;
+    font-size: 1.2em;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 30px; /* Space above the button */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    margin-top: 30px;
 }
 
-button[type="submit"]:hover {
-    background-color: #6A1EB8; /* Darker violet on hover */
+/* Button hover and active states */
+.submit-button:hover {
+    background-color: var(--button-hover-bg); /* Use new button hover color */
+    border-color: var(--border-color); /* Keep border consistent on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px var(--box-shadow);
+}
+
+.submit-button:active {
+    background-color: var(--button-active-bg); /* Use new button active color */
+    border-color: var(--border-color); /* Keep border consistent on active */
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #330033; /* Dark purple/maroon color */
-    color: #e0e0e0; /* Light text color */
+    background-color: var(--primary-color); /* Use new primary color */
+    color: var(--header-footer-text); /* Use white text for footer */
     text-align: center;
     padding: 25px 20px;
     font-size: 0.9em;
-    margin-top: auto; /* Pushes footer to the bottom */
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto 20px auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 15px var(--box-shadow); /* Use new shadow color */
+    position: relative;
+    top: -20px;
+    z-index: 0;
 }
 
 footer p {
     margin: 5px 0;
 }
 
-footer .flower-icon { /* If you add a specific class for the flower */
-    color: #f0e0f0; /* Lighter color for flower */
-    font-size: 1.1em;
-}
-
-/* Responsive Adjustments */
+/* Responsive Adjustments (two separated widths for desktop and mobile) */
 @media (max-width: 600px) {
-    form {
+    .page-header,
+    form,
+    footer,
+    .card-section {
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        max-width: none;
+    }
+
+    form, .card-section {
         padding: 20px 25px;
+        top: 0;
+    }
+
+    footer {
+        margin-top: 0;
+        top: 0;
+        margin-bottom: 0;
     }
 
     input[type="text"],
